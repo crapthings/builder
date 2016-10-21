@@ -7,7 +7,6 @@ const Core = App.core = new Mongo.Collection('app.core')
 
 Core.after.update(function (userId, doc, fieldNames, modifier, options) {
   Meteor.isServer && initCollections(doc)
-  console.log(App.collections)
 })
 
 Meteor.methods({

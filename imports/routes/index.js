@@ -14,8 +14,9 @@ Meteor.startup(function () {
   }
 
   const comp = ({ collections, ...props }) => {
+    console.log(collections)
     const routes = <Route component={App.components.layout} collections={collections}>
-      <Route path={`/`} component={App.components.home} />
+      <Route path={`/`} component={App.components.home} collections={collections} />
       <Route path={`/collections/:_id`} component={App.components.collections} />
       <Route path="/core" component={App.components.core} />
     </Route>

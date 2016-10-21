@@ -23,4 +23,5 @@ global.Subs = new SubsManager()
 global.App = {
   collections: {},
   components: {},
+  routesExist: [],
 }

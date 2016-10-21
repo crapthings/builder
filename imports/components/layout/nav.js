@@ -1,6 +1,7 @@
 import { Link } from 'react-router'
 
-const index = ({ collections }) => {
+const index = ({ collections, ...props }) => {
+  console.log(props)
   return <div>
     <ul>
       <li>
