@@ -1,13 +1,11 @@
 const index = () => <form onSubmit={(e) => submit(e)}>
 
   <div>
-
     <button type='button' onClick={() => Meteor.call('core.collections.empty')}>empty collections</button>
-
   </div>
 
   <label className='block'>
-    <span>is collection</span>
+    <span>使用数据库</span>
     <input type="checkbox" name='isCollection' />
   </label>
 
@@ -30,8 +28,6 @@ const index = () => <form onSubmit={(e) => submit(e)}>
     <span>路径</span>
     <input type="text" name='path' placeholder='不要加斜杠' />
   </label>
-
-
 
   <label className='block'>
     <input type="submit" />
