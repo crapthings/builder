@@ -15,7 +15,11 @@
     "react-dom": "^15.3.2",
     "react-komposer": "^1.13.1",
     "react-mounter": "^1.2.0",
+    "react-router": "^2.8.1",
     "recompose": "^0.20.2",
     "sift": "^3.2.6"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1"
   }
 }
