@@ -1,10 +1,7 @@
 import Nav from './nav'
 
-const index = ({ collections, children, ...props }) => <div>
-
-  {console.log(props)}
-
-  <Nav {...props.route} />
+const index = ({ children, }) => <div>
+  <Nav />
   {children}
 </div>
 

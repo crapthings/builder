@@ -14,12 +14,14 @@ import { map, mapValues, every, isFunction } from 'lodash'
 export const MeteorDataContainer = ({ sources, component, ...options }) => {
 
   const _data = sources.data
-  const _subscriptions = sources.subscriptions || [true]
+  const _subscriptions = sources.subscriptions
 
   const Subscribe = !options.cache ? Meteor.subscribe : new SubsManager().subscribe
 
   function defaultTracker(props, onData) {
-    const _loaded = map(_subscriptions, (val, key) => Subscribe(key, ...val).ready())
+    const _loaded = map(_subscriptions, (val, key) => {
+      return _subscriptions ? Subscribe(key, ...val).ready() : true
+    })
     const data = mapValues(_data, (val) => isFunction(val) ? val() : val)
     every(_loaded) && onData(null, data)
   }

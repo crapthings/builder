@@ -1,12 +1,20 @@
 import CoreForm from './form'
 
-const index = ({ collections }) => <div>
+const data = {
+  core () {
+    console.log(App.core.findOne({ core: true }))
+    return App.core.findOne({ core: true })
+  }
+}
 
+const index = () => <div>
   <CoreForm />
 
-  {collections && collections.length && collections.map(({_id, name, path, ...collection}) => <div key={_id}>
-    {name} {path}
-  </div>)}
+  <MeteorDataContainer sources={{ data, }} component={({ core, }) => <div>
+    {core.collections.map(({_id, name, path, ...collection}) => <div key={_id}>
+      {name} {path}
+    </div>)}
+  </div>} />
 
 </div>
 

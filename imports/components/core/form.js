@@ -23,12 +23,12 @@ const index = () => <form onSubmit={(e) => submit(e)}>
 
   <label className='block'>
     <span>is collection</span>
-    <input type="checkbox" name='isCollection' defaultChecked={true} />
+    <input type="checkbox" name='isCollection' defaultChecked='true' />
   </label>
 
   <label className='block'>
     <span>在导航显示？</span>
-    <input type="checkbox" name='isNav' defaultChecked={true} />
+    <input type="checkbox" name='isNav' defaultChecked='true' />
   </label>
 
   <label className='block'>

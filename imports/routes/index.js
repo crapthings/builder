@@ -6,17 +6,14 @@ Meteor.startup(function () {
   const container = ($('<div id="app" />').appendTo('body'))[0]
 
   const tracker = function (props, onData) {
+    console.log('rerender')
     const loaded = Meteor.subscribe('app.core').ready()
-    if (loaded) {
-      const collections = App.core.findOne().collections
-      onData(null, { collections })
-    }
+    loaded && onData(null, {})
   }
 
-  const comp = ({ collections, ...props }) => {
-    console.log(collections)
-    const routes = <Route component={App.components.layout} collections={collections}>
-      <Route path={`/`} component={App.components.home} collections={collections} />
+  const comp = () => {
+    const routes = <Route component={App.components.layout}>
+      <Route path={`/`} component={App.components.home} />
       <Route path={`/collections/:_id`} component={App.components.collections} />
       <Route path="/core" component={App.components.core} />
     </Route>

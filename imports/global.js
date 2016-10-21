@@ -1,4 +1,4 @@
-// import { MeteorDataContainer as MDC } from '/imports/react-meteor-api'
+import { MeteorDataContainer as MDC } from '/imports/react-meteor-api'
 
 global._ = require('lodash')
 
@@ -12,7 +12,7 @@ global.Component = require('react').Component
 
 global.TrackerContainer = global.Container = require('react-komposer').composeWithTracker
 
-// global.MeteorDataContainer = global.MDC
+global.MeteorDataContainer = MDC
 
 global.Mount = global.mount = require('react-mounter').mount
 
@@ -23,5 +23,4 @@ global.Subs = new SubsManager()
 global.App = {
   collections: {},
   components: {},
-  routesExist: [],
 }

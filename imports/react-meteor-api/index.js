@@ -6,6 +6,6 @@ RMAConfig = {
 
 export { MeteorDataContainer } from './src/data-container'
 
-export { MeteorRouter } from './src/router'
+// export { MeteorRouter } from './src/router'
 
 export { MeteorCall } from './src/meteor-call'
