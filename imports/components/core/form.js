@@ -7,6 +7,16 @@ const index = () => <form onSubmit={(e) => submit(e)}>
   </div>
 
   <label className='block'>
+    <span>is collection</span>
+    <input type="checkbox" name='isCollection' />
+  </label>
+
+  <label className='block'>
+    <span>显示在导航</span>
+    <input type="checkbox" name='isNav' />
+  </label>
+
+  <label className='block'>
     <span>名称</span>
     <input type="text" name='name' required />
   </label>
@@ -21,18 +31,11 @@ const index = () => <form onSubmit={(e) => submit(e)}>
     <input type="text" name='path' placeholder='不要加斜杠' />
   </label>
 
-  <label className='block'>
-    <span>is collection</span>
-    <input type="checkbox" name='isCollection' defaultChecked='true' />
-  </label>
 
-  <label className='block'>
-    <span>在导航显示？</span>
-    <input type="checkbox" name='isNav' defaultChecked='true' />
-  </label>
 
   <label className='block'>
     <input type="submit" />
+    <input type="reset" />
   </label>
 
 </form>
@@ -43,6 +46,7 @@ function submit(e) {
   const formId = form.id = Random.id()
   const opt = form2js(formId)
   opt._id = Random.id()
+  opt.isNav = opt.isNav ? true : false
   Meteor.call('core.collections.add', opt, err => !err && form.reset())
 }
 

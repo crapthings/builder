@@ -33,6 +33,4 @@ Meteor.isServer && Meteor.publish('app.core', function () {
   return Core.find(CORE_SELECTOR)
 })
 
-Meteor.isServer && Core.remove({})
-
 Meteor.isServer && !Core.findOne(CORE_SELECTOR) && Core.insert(CORE_DEFAULT)
